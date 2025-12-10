@@ -1,9 +1,9 @@
-import { applyDiscount } from './calculate.js';
+import { applyDiscount, calculatePrice } from './calculate.js';
 
 export function buySummary(itemList, discountPercent = 0) {
   let itemSummary = {};
-  const totalprice = calculatePrice();
-  const reducedPrice = applyDiscount(itemList, discountPercent);
+  const total = calculatePrice(itemList);
+  const reduced = applyDiscount(itemList, discountPercent);
   let prodQuantity = 0;
   for (let item of itemList) {
     if (item.name in itemSummary) {
@@ -15,13 +15,8 @@ export function buySummary(itemList, discountPercent = 0) {
   for (let key in itemSummary) {
     prodQuantity += itemSummary[key];
   }
-  console.table({
-    prodQuantity: prodQuantity,
-    totalPrice: totalprice,
-    reducedPrice: reducedPrice,
-  });
-  return;
+  itemSummary['total products'] = prodQuantity;
+  itemSummary['total price'] = total;
+  itemSummary['reduced price'] = reduced;
+  console.table(itemSummary);
 }
-
-let a = [{ name: 2 }, { name: 2 }, { name: 3 }];
-buySummary(a);
