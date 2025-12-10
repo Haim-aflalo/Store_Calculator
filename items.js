@@ -1,12 +1,9 @@
-export function createItem(name, price){
+export function createItem(name, price) {
+  let item = { name: name, price: price };
+  return item;
+}
 
-    let item = {name : name, price : price};
-    return item;
-};
-
-
-export function generateItemList(itemList, item){
-
-    itemList.push(item);
-    return itemList;
-};
+export function generateItemList(itemList, item) {
+  itemList.push(item);
+  return itemList;
+}

@@ -1,3 +1,4 @@
+
 export function calculatePrice(itemList){
 
     let totalPrice = 0;
@@ -15,4 +16,4 @@ export function calculatePrice(itemList){
 export function applyDiscount(itemList, discountPercent) {
   const totalprice = calculatePrice(itemList);
   return Math.floor(totalprice * (1 - discountPercent / 100));
-};
+
