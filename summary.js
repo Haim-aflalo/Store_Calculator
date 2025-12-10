@@ -19,4 +19,5 @@ export function buySummary(itemList, discountPercent = 0) {
   itemSummary['total price'] = total;
   itemSummary['reduced price'] = reduced;
   console.table(itemSummary);
+  return
 }
