@@ -1,5 +1,4 @@
 import { createItem, generateItemList } from "./items.js";
-import { calculatePrice, applyDiscount } from "./calculate.js";
 import { buySummary } from "./summary.js";
 
 let myList = [];
